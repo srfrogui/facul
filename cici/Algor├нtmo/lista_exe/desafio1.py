@@ -1,4 +1,4 @@
-alunos = []  
+alunos = []  # Lista para armazenar os dados dos alunos
 
 while True:
 
@@ -16,41 +16,11 @@ while True:
 
 if alunos:
 
+    media = sum(aluno[1] for aluno in alunos) / len(alunos)
 
-    soma = 0
+    aluno_maior_nota = max(alunos, key=lambda x: x[1])[0]
 
-    for aluno in alunos:
-
-        soma += aluno[1]
-
-    media = soma / len(alunos)
-
-    maior_nota = alunos[0][1]
-
-    aluno_maior_nota = alunos[0][0]
-
-    for aluno in alunos:
-
-        if aluno[1] > maior_nota:
-
-            maior_nota = aluno[1]
-
-            aluno_maior_nota = aluno[0]
-
-
-    menor_nota = alunos[0][1]
-
-    aluno_menor_nota = alunos[0][0]
-
-    for aluno in alunos:
-
-        if aluno[1] < menor_nota:
-
-            menor_nota = aluno[1]
-
-            aluno_menor_nota = aluno[0]
-
-    # Mostra os resultados
+    aluno_menor_nota = min(alunos, key=lambda x: x[1])[0]
 
     print("Média das notas:", media)
 
@@ -61,4 +31,3 @@ if alunos:
 else:
 
     print("Nenhum aluno registrado.")
-
