@@ -2,9 +2,8 @@ lista = []
 i = 0
 
 for loop in range(5):
-    num = int(input(f'Digite {loop+1}/6 numeros: '))
     # num = 0 if num < 0 else num #------- ou -------
-    lista.append(num)
+    lista.append(int(input(f'Digite {loop+1}/6 numeros: ')))
 
 for valore in lista:
     i += 1
