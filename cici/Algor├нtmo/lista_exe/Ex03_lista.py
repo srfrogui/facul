@@ -1,5 +1,4 @@
 lista = []
 for loop in range(4):
-    num = float(input(f'Digite {loop+1}/4 numeros: '))
-    lista.append(num)
+    lista.append(float(input(f'Digite {loop+1}/4 numeros: ')))
 print(f'numeros: {lista}\nmedia: {sum(lista)/len(lista):.2f}')
