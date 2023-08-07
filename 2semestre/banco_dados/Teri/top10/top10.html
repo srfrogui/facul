@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top 10 Colocados</title>
+</head>
+<body>
+    <h1>Top 10 Colocados</h1>
+    <ul id="top10">
+        <!-- Os resultados serão preenchidos aqui dinamicamente -->
+    </ul>
+
+    <script>
+        // Função para carregar os top 10 colocados usando AJAX
+        function carregarTop10() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var top10 = JSON.parse(xhr.responseText);
+                    var lista = document.getElementById("top10");
+
+                    // Limpa a lista existente antes de preencher os novos resultados
+                    lista.innerHTML = "";
+
+                    // Preenche a lista com os top 10 colocados
+                    top10.forEach(function(colocado, index) {
+                        var item = document.createElement("li");
+                        item.textContent = (index + 1) + ". " + colocado.nome + " - Pontuação: " + colocado.pontuacao;
+                        lista.appendChild(item);
+                    });
+                }
+            };
+
+            xhr.open("GET", "obter_top10.php", true);
+            xhr.send();
+        }
+
+        // Carrega os top 10 colocados quando a página é carregada
+        carregarTop10();
+    </script>
+</body>
+</html>
