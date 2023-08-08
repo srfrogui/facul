@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top 10 Colocados</title>
+</head>
+<body>
+    <h1>Top 10 Colocados</h1>
+    <ul id="top10">
+        <!-- Os resultados serão preenchidos aqui dinamicamente -->
+    </ul>
+
+    <script>
+        var lista = document.getElementById("top10");
+
+        // Cria uma nova conexão SSE
+        var source = new EventSource("atualizar_colocacoes.php");
+
+        // Define o manipulador de eventos para atualizar a lista quando um evento for recebido
+        source.addEventListener("update", function(event) {
+            var top10 = JSON.parse(event.data);
+
+            // Limpa a lista existente antes de preencher os novos resultados
+            lista.innerHTML = "";
+
+            // Preenche a lista com os top 10 colocados
+            top10.forEach(function(colocado, index) {
+                var item = document.createElement("li");
+                item.textContent = (index + 1) + ". " + colocado.nome + " - Pontuação: " + colocado.pontuacao;
+                lista.appendChild(item);
+            });
+        });
+    </script>
+</body>
+</html>
