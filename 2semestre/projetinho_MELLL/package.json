@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "whatsapp-web.js": "^1.21.0"
+  }
+}
