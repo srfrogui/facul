@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@puppeteer/browsers": "^1.5.1",
-    "mysql": "^2.18.1",
-    "puppeteer": "^21.0.2",
-    "whatsapp-web.js": "^1.21.0"
-  }
-}
