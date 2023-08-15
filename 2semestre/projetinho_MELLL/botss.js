@@ -74,6 +74,30 @@ function checkPedidoExistente(pessoa, quantidade, tipoMel, tamanho) {
   });
 }
 
+// Função para inserir um novo pedido
+async function inserirPedido(pessoa, quantidade, tipoMel, tamanho) {
+  // Verifica se o pedido já existe
+  const pedidoExistente = await checkPedidoExistente(pessoa, quantidade, tipoMel, tamanho);
+  if (pedidoExistente) {
+    console.log('Pedido já existe.');
+    return false;
+  }
+  // Calcula o preço total do pedido
+  const precoUnitario = calcularPrecoUnitario(tipoMel, tamanho);
+  const precoTotal = quantidade * precoUnitario;
+
+  // Insere o pedido no banco de dados
+  const insertQuery = `INSERT INTO pedidos (pessoa, quantidade, tipo, tamanho) VALUES (?, ?, ?, ?)`;
+  db.query(insertQuery, [pessoa, quantidade, tipoMel, tamanho], (err, result) => {
+    if (err) {
+      console.error('Erro ao registrar pedido:', err);
+      return;
+    }
+    console.log('Pedido registrado com sucesso!');
+    console.log(`Preço Total: R$ ${precoTotal.toFixed(2)}`);
+  });
+}
+
 // Função para calcular o preço unitário do mel com base no tipo e tamanho
 function calcularPrecoUnitario(tipoMel, tamanho) {
   const tipo = mapTipoMel(tipoMel);
