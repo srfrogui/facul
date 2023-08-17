@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#home"><img src="./img/pipi.png" alt="nooooo"></a>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#formacao">Formação</a>
+            <a href="#social">Social</a>
+            <a href="#contatos">Contatos</a>
+            <a href="#experiencia">Experiencia</a>
+        </nav>
+    </header>
+    <a id="topButton" href="#" target="blank_" class="top_bnt"><img src="./img/top_bnt.png" alt="top_bnt" srcset=""></a>
+    <section id="#home">
+        <img src="./img/foto.png" alt="foto_perfil">
+        <div>
+            <h1>NOMECOMPLETODUBLADO</h1>
+            <p>idade</p>
+        </div>
+    </section>
+    <section id="#formacao">
+        <div class="card">
+            <a href=""><h2>Nome do Curso</h2></a>
+        </div>
+        <div class="card">
+            <a href=""><h2>Nome do Curso</h2></a>
+        </div>
+        <div class="card">
+            <a href=""><h2>Nome do Curso</h2></a>
+        </div>
+    </section>
+    
+    <footer>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </footer>
+</body>
+<script>
+    const topButton = document.getElementById("topButton");
+
+    topButton.addEventListener("click", () => {
+        // Rola a página de volta ao topo suavemente
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    let prevScrollPos = window.pageYOffset;
+
+    window.onscroll = function() {
+        const currentScrollPos = window.pageYOffset;
+
+        if (prevScrollPos > currentScrollPos) {
+            document.querySelector("header").style.top = "0";
+        } else {
+            document.querySelector("header").style.top = "-3rem";
+        }
+
+        prevScrollPos = currentScrollPos;
+    };
+</script>
+</html>
