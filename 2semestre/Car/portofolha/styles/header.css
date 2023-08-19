@@ -1,0 +1,97 @@
+/* Estilos do cabeçalho */
+header {
+    background-color: #11061d;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    position: fixed;
+    transition: top 0.3s ease;
+    width: 100%;
+    border-bottom: 1px solid #663399;
+    top: 0;
+}
+
+header a  img{
+    height: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+nav a {
+    color: white;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+    max-width: 720px;
+    padding: 5px;
+}
+
+nav a:hover {
+    color: #8a63d2;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+#bar3.active {
+    transform-origin: 100% 0; /* Set the rotation pivot to the top-right corner of the bar */
+    transform: rotate(-40deg);
+}
+
+/* Floating menu */
+.floating-menu {
+    position: fixed;
+    right: -100%; /* Initially hide the menu off the screen */
+    transform: translate(0, -50%) scale(1); /* Change the initial transform */
+    background-color: #11061d;
+    width: 200px;
+    height: auto; /* Adjusted to auto for variable content */
+    transition: right 0.5s ease; /* Changed transition property */
+    z-index: 999;
+}
+
+.floating-menu.active {
+    right: 0;
+}
+
+.floating-menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.floating-menu a {
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.floating-menu a:hover {
+    color: #8a63d2;
+}
+
+.nav-links {
+    display:flex;
+    align-items: center;
+    gap: 1rem;
+}

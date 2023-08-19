@@ -1,0 +1,31 @@
+/* Estilos das seções */
+.formacao {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.card {
+    flex: 0 1 calc(33.33% - 1rem); /* Tamanho fixo para 3 colunas por linha */
+    background-color: #000000;
+    font-size: small;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px #b139f785;
+    transition: background-color 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.card h2{
+    color: rgb(198, 53, 255);
+}
+
+.card p {
+    padding-top: 10px;
+    color: white;
+}
+
+.card:hover {
+    background-color: #11061d;
+}

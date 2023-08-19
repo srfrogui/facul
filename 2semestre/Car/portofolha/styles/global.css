@@ -1,0 +1,42 @@
+/* Reset de estilos padrão */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* Estilos globais */
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    margin: 0 10%;
+}
+
+/* Estilos da barra de rolagem */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;   
+}
+
+::-webkit-scrollbar-thumb {
+    background: purple;
+    border-radius: 5px;
+}
+
+/* Importar outros arquivos de estilos */
+@import url("header.css");
+@import url("section.css");
+@import url("mobile.css");
