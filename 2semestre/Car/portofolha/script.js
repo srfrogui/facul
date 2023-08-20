@@ -11,7 +11,21 @@ window.onscroll = function() {
 
     prevScrollPos = currentScrollPos;
 };
+
 // Calcular idade que se atualiza com o tempo
+const birthDate = new Date("2004-07-16");
+const idadeElement = document.getElementById("idade");
+
+function calculateAge(birthDate) {
+    const now = new Date();
+    return now.getFullYear() - birthDate.getFullYear() - (now < new Date(now.getFullYear(), birthDate.getMonth(), birthDate.getDate()));
+}
+
+function updateAge() {
+    idadeElement.textContent = `Idade: ${calculateAge(birthDate)} anos`;
+}
+
+window.addEventListener("load", updateAge);
 
 //hamburgui
 function toggleMenu() {
