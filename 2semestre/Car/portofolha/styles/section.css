@@ -3,23 +3,26 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;   
+    padding-top: 5rem;
 }
 
 .home img {
     max-width: 200px;
     height: auto;
+    padding: 0 3rem;
 }
 
 .home div {
     padding: 10px;
     color:rgb(198, 53, 255);
-    text-align: center;   
+    text-align: center;
 }
 
 .formacao {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border-top:solid #11061d;
     gap: 1rem;
 }
 

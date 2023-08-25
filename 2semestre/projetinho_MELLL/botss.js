@@ -20,9 +20,9 @@ const client = new Client({
 
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'test'
+  user: 'oma',
+  password: 'macaco',
+  database: 'melado'
 });
 
 // Defina os preços unitários para cada tipo e tamanho de mel
@@ -339,4 +339,3 @@ client.on('message', async (message) => {
     `);
   }
 });
-

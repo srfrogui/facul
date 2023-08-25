@@ -1,0 +1,14 @@
+* {
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(72, 0, 72);
+}
+
+h1 {
+    color:white;
+}
